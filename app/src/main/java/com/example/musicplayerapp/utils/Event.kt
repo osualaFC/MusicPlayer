@@ -1,6 +1,7 @@
 package com.example.musicplayerapp.utils
 
-open class Event<out, T>(private val data: T){
+/**for preventing multiple firing of events**/
+open class Event<out T>(private val data: T){
 
     var hasBeenHandled = false
         private set
