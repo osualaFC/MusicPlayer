@@ -31,13 +31,17 @@ class MusicService : MediaBrowserServiceCompat() {
 
     /**deals with cancellations of coroutines**/
 
-    private lateinit var mediaSession: MediaSessionCompat
-
-    /**Allows interaction with media controllers, volume keys, media buttons, and
+    private lateinit var mediaSession: MediaSessionCompat  /**Allows interaction with media controllers, volume keys, media buttons, and
      * transport controls*/
-    private lateinit var mediaSessionConnector: MediaSessionConnector
 
-    /**enable transport control to be displayed**/
+
+    private lateinit var mediaSessionConnector: MediaSessionConnector  /**enable transport control to be displayed**/
+
+    private lateinit var musicNotificationManager: MusicNotificationManager
+
+
+
+    var isForegroundService = false
 
     override fun onCreate() {
         super.onCreate()
@@ -53,9 +57,21 @@ class MusicService : MediaBrowserServiceCompat() {
         /***contains info about the mediaSession**/
         sessionToken = mediaSession.sessionToken
 
+        /**initialize music notification manager***/
+        musicNotificationManager = MusicNotificationManager(
+            this,
+            mediaSession.sessionToken,
+            MusicPlayerNotificationListener(this)
+        ) {
+
+        }
+
         mediaSessionConnector = MediaSessionConnector(mediaSession)
         mediaSessionConnector.setPlayer(exoPlayer)
     }
+
+
+
 
     override fun onDestroy() {
         super.onDestroy()
