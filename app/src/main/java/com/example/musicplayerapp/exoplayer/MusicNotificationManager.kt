@@ -22,7 +22,7 @@ class MusicNotificationManager(
     private val newSongCallback: () -> Unit
 ) {
 
-    /**manages notifacation --from exoplayer***/
+    /**manages notification --from exoplayer***/
     private val notificationManager: PlayerNotificationManager
 
     init {

@@ -61,7 +61,7 @@ class FirebaseMusicSource @Inject constructor(
             .setIconUri(song.description.iconUri)
             .build()
         MediaBrowserCompat.MediaItem(desc, MediaBrowserCompat.MediaItem.FLAG_PLAYABLE)
-    }
+    }.toMutableList()
 
     /**states when getting songs from fire store**/
 
