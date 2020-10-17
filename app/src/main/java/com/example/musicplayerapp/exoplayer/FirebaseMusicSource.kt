@@ -17,7 +17,7 @@ class FirebaseMusicSource @Inject constructor(
 ){
 
 
-    private var songs = emptyList<MediaMetadataCompat>()
+    var songs = emptyList<MediaMetadataCompat>()
 
     /***get all songs from fire store**/
     suspend fun fetchMediaData() = withContext(Dispatchers.IO) {
