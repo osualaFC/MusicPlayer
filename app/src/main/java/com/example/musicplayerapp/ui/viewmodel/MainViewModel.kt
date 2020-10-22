@@ -1,4 +1,4 @@
-package com.example.musicplayerapp.data.ui.viewmodel
+package com.example.musicplayerapp.ui.viewmodel
 
 import android.support.v4.media.MediaBrowserCompat
 import android.support.v4.media.MediaMetadataCompat

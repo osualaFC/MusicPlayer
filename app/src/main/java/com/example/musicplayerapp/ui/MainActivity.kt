@@ -1,4 +1,4 @@
-package com.example.musicplayerapp.data.ui
+package com.example.musicplayerapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

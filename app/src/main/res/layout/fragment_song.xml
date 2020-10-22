@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".data.ui.SongFragment">
+    tools:context=".ui.SongFragment">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvSongName"
