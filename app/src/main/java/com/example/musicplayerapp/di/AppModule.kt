@@ -5,6 +5,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.example.musicplayerapp.R
+import com.example.musicplayerapp.exoplayer.MusicServiceConnection
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,6 +17,13 @@ import javax.inject.Singleton
 @InstallIn(ApplicationComponent::class)
 object AppModule {
     /**this describe to hilt how it should create dependencies**/
+
+    @Singleton
+    @Provides
+    fun provideMusicServiceConnection(
+        @ApplicationContext context: Context
+    ) = MusicServiceConnection(context)
+
     @Singleton
     @Provides
     fun provideGlideInstance(
