@@ -35,8 +35,8 @@ object AppModule {
         @ApplicationContext context: Context
     ) = Glide.with(context).setDefaultRequestOptions(
         RequestOptions()
-            .placeholder(R.drawable.ic_image)
-            .error(R.drawable.ic_image)
+            .placeholder(R.drawable.music_bg)
+            .error(R.drawable.music_bg)
             .diskCacheStrategy(DiskCacheStrategy.DATA) /**makes sure images are cached with glide**/
     )
 }
