@@ -15,4 +15,7 @@
         android:name="com.example.musicplayerapp.ui.SongFragment"
         android:label="fragment_song"
         tools:layout="@layout/fragment_song" />
+
+    <action android:id="@+id/globalActionToSongFragment"
+        app:destination="@id/songFragment" />
 </navigation>
