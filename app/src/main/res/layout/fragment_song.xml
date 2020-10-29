@@ -3,32 +3,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_color_background"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.SongFragment">
+
+    <!--    <ImageView-->
+<!--        android:id="@+id/ivSongImage"-->
+<!--        android:layout_width="300dp"-->
+<!--        android:layout_height="300dp"-->
+<!--        android:background="@color/darkBackground"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/guideline2"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:background="@drawable/music_bg2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvSongName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="344dp"
         android:gravity="center"
-        android:text="SONG NAME"
+        android:text="@string/song_name"
+        android:textStyle="bold"
         android:textSize="24sp"
         app:fontFamily="@font/poppins_medium"
-        app:layout_constraintBottom_toTopOf="@+id/ivSongImage"
+        app:layout_constraintBottom_toTopOf="@+id/tvSongArtist"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/ivSongImage"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:background="@color/darkBackground"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvSongArtist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/artist"
+        android:textSize="18sp"
+        app:fontFamily="@font/poppins_medium"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSongName" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvCurTime"
@@ -46,6 +70,9 @@
         android:id="@+id/seekBar"
         android:layout_width="0dp"
         android:layout_height="18dp"
+        android:progressTint="@color/colorPrimary"
+        android:thumbTint="@color/colorPrimary"
+        android:progressBackgroundTint="@color/colorLight"
         app:layout_constraintEnd_toStartOf="@+id/tvSongDuration"
         app:layout_constraintStart_toEndOf="@+id/tvCurTime"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
@@ -67,12 +94,12 @@
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/circle_drawable"
         android:src="@drawable/ic_play"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:tint="@color/colorPrimary" />
 
     <ImageView
         android:id="@+id/ivSkipPrevious"

@@ -17,7 +17,7 @@ class SongAdapter @Inject constructor(
         holder.itemView.apply {
             tvPrimary.text = song.title
             tvSecondary.text = song.artist
-            glide.load(song.thumbnail).into(ivItemImage)
+            //glide.load(song.thumbnail).into(ivItemImage)
 
             setOnClickListener {
                 onItemClickListener?.let { click ->

@@ -5,12 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
+    <androidx.cardview.widget.CardView
         android:id="@+id/ivItemImage"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_play"
+            android:background="@drawable/gradient_color_buttons"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvPrimary"
@@ -18,9 +31,11 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:gravity="center|left"
-        android:text="Playlist Title"
+        android:gravity="center|start"
+        android:text="@string/playlist_title"
         android:layout_marginTop="8dp"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivItemImage"
@@ -30,8 +45,10 @@
         android:id="@+id/tvSecondary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="100 Songs"
+        android:text="@string/_100_songs"
         android:textSize="14sp"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         app:layout_constraintEnd_toEndOf="parent"
