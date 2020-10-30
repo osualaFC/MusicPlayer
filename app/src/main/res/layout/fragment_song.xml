@@ -7,15 +7,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.SongFragment">
 
-    <!--    <ImageView-->
-<!--        android:id="@+id/ivSongImage"-->
-<!--        android:layout_width="300dp"-->
-<!--        android:layout_height="300dp"-->
-<!--        android:background="@color/darkBackground"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/guideline2"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintStart_toStartOf="parent" />-->
 
     <ImageView
         android:layout_width="match_parent"
@@ -33,6 +24,7 @@
         android:gravity="center"
         android:text="@string/song_name"
         android:textStyle="bold"
+        android:textColor="@color/lightBackground"
         android:textSize="24sp"
         app:fontFamily="@font/poppins_medium"
         app:layout_constraintBottom_toTopOf="@+id/tvSongArtist"
@@ -48,6 +40,7 @@
         android:gravity="center"
         android:text="@string/artist"
         android:textSize="18sp"
+        android:textColor="@color/lightBackground"
         app:fontFamily="@font/poppins_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

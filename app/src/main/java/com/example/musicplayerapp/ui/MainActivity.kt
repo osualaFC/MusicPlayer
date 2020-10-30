@@ -1,9 +1,11 @@
 package com.example.musicplayerapp.ui
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.media.session.PlaybackStateCompat
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
@@ -49,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         vpSong.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
-                if(playbackState?.isPlaying == true) {
+                if (playbackState?.isPlaying == true) {
                     mainViewModel.playOrToggleSong(swipeSongAdapter.songs[position])
                 } else {
                     curPlayingSong = swipeSongAdapter.songs[position]
@@ -71,10 +73,21 @@ class MainActivity : AppCompatActivity() {
 
         /***toggle bottom bar**/
         navHostFragment.findNavController().addOnDestinationChangedListener { _, destination, _ ->
-            when(destination.id){
+            when (destination.id) {
                 R.id.songFragment -> hideBottomBar()
                 R.id.homeFragment -> showBottomBar()
             }
+        }
+
+        btn_switch.setOnClickListener {
+            val isNightTheme = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+            when (isNightTheme) {
+                Configuration.UI_MODE_NIGHT_YES ->
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                Configuration.UI_MODE_NIGHT_NO ->
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            }
+
         }
     }
 
